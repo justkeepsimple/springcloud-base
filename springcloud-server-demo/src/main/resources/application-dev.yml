@@ -1,0 +1,52 @@
+server:
+  port: 10003
+spring:
+  application:
+    name: upload
+  datasource:
+    hikari:
+      maximum-pool-size: 20
+    name: dev
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/order?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+
+
+eureka:
+  client:
+    register-with-eureka: true #是否将自己注册到Eureka服务中，本身是无需注册的
+    fetch-registry: true #是否从Eureka中获取注册信息
+    service-url:
+      #defaultZone: http://admin:1qazxsw2@192.168.1.120:6868/eureka/,http://admin:1qazxsw2@192.168.1.120:6869/eureka/
+      defaultZone: http://admin:1qazxsw2@127.0.0.1:10001/eureka/
+
+  instance:
+    prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+    #status-page-url: http://${ipaddr}:${server.port}/swagger-ui.html
+
+# 分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+logging:
+  level:
+    i.icoolh.coder.springcloud.server.demo.mapper: DEBUG

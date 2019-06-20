@@ -1,0 +1,27 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: icoolh-discovery-eureka
+  security:
+    user:
+      name: admin
+      password: 1qazxsw2
+
+eureka:
+  client:
+    register-with-eureka: true #是否将自己注册到Eureka服务中，本身是无需注册的
+    fetch-registry: true #是否从Eureka中获取注册信息
+    service-url:
+      defaultZone: http://admin:1qazxsw2@127.0.0.1:10001/eureka/
+
+  instance:
+    prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+
+  server:
+    enable-self-preservation: false #禁用自我保护模式
+    eviction-interval-timer-in-ms: 60000 #清理间隔 ms
+
+

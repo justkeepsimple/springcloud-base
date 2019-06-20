@@ -1,0 +1,51 @@
+server:
+  port: 10002
+spring:
+  application:
+    name: icoolh-gateway
+  cloud:
+      gateway:
+        discovery:
+          locator:
+            enabled: true  #Flag that enables DiscoveryClient gateway integration
+            lowerCaseServiceId: true #服务名称小写
+eureka:
+  client:
+    register-with-eureka: true #是否将自己注册到Eureka服务中，本身是无需注册的
+    fetch-registry: true #是否从Eureka中获取注册信息
+    service-url:
+      #defaultZone: http://admin:1qazxsw2@192.168.1.120:6868/eureka/,http://admin:1qazxsw2@192.168.1.120:6869/eureka/
+      defaultZone: http://admin:1qazxsw2@$127.0.0.1:10001/eureka/
+
+  instance:
+    prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+    #status-page-url: http://${ipaddr}:${server.port}/swagger-ui.html
+
+
+
+
+#ribbon重试机制
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+  SocketTimeout: 5000
+  # 同一实例最大重试次数，不包括首次调用
+  MaxAutoRetries: 1
+   # 重试其他实例的最大重试次数，不包括首次所选的server
+  MaxAutoRetriesNextServer: 2
+   # 是否所有操作都进行重试
+  OkToRetryOnAllOperations: true
+  retryableStatusCodes: 404,500,502,408
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000
+
+
+

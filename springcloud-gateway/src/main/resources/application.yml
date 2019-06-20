@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeader: "*"
+            exposedHeader: "Authorization"
