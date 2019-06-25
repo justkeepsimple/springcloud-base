@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: \u002a
+
+##eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjE0NTI1MTMsInVzZXJfbmFtZSI6Imljb29saDEiLCJqdGkiOiJjYzFlYmVkZC1kMzQ3LTRlNmEtYTRkNy03ODYwMmI2ZjcwZGMiLCJjbGllbnRfaWQiOiJhdXRoLXNlcnZpY2UiLCJzY29wZSI6WyJhbGwiXX0.CQGs0psPlHoJhULGP5p917FZZxsg2CJmaA74DlPD8aQgJDEK69WDJrTndNsQmBkr-lSFKm010GyM8nl3ayiUzxtPAmZ6OnYty5gdMIzNMS5xSa9d3fESM6OYrWbm2rytssj2nv2I60dI-4PhLELQAiCJDxa0HPRxCzyUeFCbsEa7yMrTSXsRDWD1GlUgzKLVyq-d6pudfSRVzq5xEwGnIjpwkWROzpcRBtwKa03mTOBNnecfQVQ_jDAN1DOS3X7i67ixQHhLBWQvQSsnMIxU9kyaUd6_Mp7AX1Hwa-7RYHiMdSB2JLUAiKnFbfUy4JrMF02UeoVwkXgMcZKcdJ-vyA

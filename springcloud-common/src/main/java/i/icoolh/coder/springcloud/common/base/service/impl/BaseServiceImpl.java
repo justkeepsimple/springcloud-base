@@ -5,6 +5,7 @@ import i.icoolh.coder.springcloud.common.base.mapper.BaseMapper;
 import i.icoolh.coder.springcloud.common.base.entity.BaseEntity;
 import i.icoolh.coder.springcloud.common.base.service.BaseService;
 
+import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -15,13 +16,15 @@ import java.util.List;
 public abstract class BaseServiceImpl<T extends BaseEntity, PK extends Serializable> implements BaseService<T, PK> {
     protected BaseMapper<T, PK> baseDao;
 
-    protected abstract void setBaseDao(BaseMapper baseMapper);
+    protected abstract void setBaseMapper(BaseMapper baseMapper);
     @Override
+    @Transactional
     public int deleteByPK(PK pk) {
          return baseDao.deleteByPrimaryKey(pk);
     }
 
     @Override
+    @Transactional
     public int updateByPKSelect(T t) {
         Date date = new Date(System.currentTimeMillis());
         t.setUpdateTime(date);
@@ -29,6 +32,7 @@ public abstract class BaseServiceImpl<T extends BaseEntity, PK extends Serializa
     }
 
     @Override
+    @Transactional
     public int updateByPK(T t) {
         Date date = new Date(System.currentTimeMillis());
         t.setUpdateTime(date);
@@ -57,6 +61,7 @@ public abstract class BaseServiceImpl<T extends BaseEntity, PK extends Serializa
     }
 
     @Override
+    @Transactional
     public int saveSelect(T t) {
         return baseDao.insertSelective(t);
     }

@@ -1,8 +1,8 @@
 server:
-  port: 10004
+  port: 10003
 spring:
   application:
-    name: demo
+    name: auth-server
   datasource:
     hikari:
       maximum-pool-size: 20
@@ -49,4 +49,5 @@ pagehelper:
 
 logging:
   level:
-    i.icoolh.coder.springcloud.server.demo.mapper: DEBUG
+    i.icoolh.coder.springcloud.auth.mapper: DEBUG
+    org.springframework.security: DEBUG
