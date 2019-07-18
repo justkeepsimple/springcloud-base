@@ -1,10 +1,9 @@
 package i.icoolh.coder.springcloud.auth.jwt;
 
-import i.icoolh.coder.springcloud.auth.entity.UserAuth;
+import com.sun.org.apache.xml.internal.security.utils.Base64;
 import i.icoolh.coder.springcloud.server.demo.entity.User;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.security.crypto.codec.Base64;
 import org.springframework.security.jwt.Jwt;
 import org.springframework.security.jwt.JwtHelper;
 import org.springframework.security.jwt.crypto.sign.*;

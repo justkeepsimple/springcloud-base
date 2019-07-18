@@ -128,7 +128,6 @@ public class QueryFilter implements Serializable {
                     sb.append(" ");
                     sb.append(orders[i]);
                     this.example.setOrderByClause(sb.toString());
-
                 }
             }
         }

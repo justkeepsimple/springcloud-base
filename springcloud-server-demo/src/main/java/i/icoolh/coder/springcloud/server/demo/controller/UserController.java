@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 
 /**
  * Created by yangkaihong on 2019/6/21
+ * @author icoolh
  */
 @RestController
 @RequestMapping("/user")
@@ -28,7 +29,7 @@ public class UserController extends BaseController<User, Long> {
     }
 
 
-    @GetMapping("/register")
+    @PostMapping("/register")
     public ResponseMessage postUser(@RequestParam("username") String username,
                                     @RequestParam("password") String password){
         User user = new User();

@@ -17,6 +17,7 @@ public interface BaseService<T extends BaseEntity, PK extends Serializable> {
      * 删除操作需要谨慎，故只增加一个删除操作
      * @param pk
      * @return 删除成功记录数
+     * @author icoolh
      */
     int deleteByPK(PK pk);
 
@@ -24,6 +25,7 @@ public interface BaseService<T extends BaseEntity, PK extends Serializable> {
      * 根据主键更新不为空的字段
      * @param t
      * @return 修改成功记录数
+     * @author icoolh
      */
     int updateByPKSelect(T t);
 
@@ -31,6 +33,7 @@ public interface BaseService<T extends BaseEntity, PK extends Serializable> {
      * 根据主键更新所有的字段
      * @param t
      * @return 修改成功记录数
+     * @author icoolh
      */
     int updateByPK(T t);
 
@@ -38,13 +41,15 @@ public interface BaseService<T extends BaseEntity, PK extends Serializable> {
      * 根据主键获取数据
      * @param pk
      * @return
+     * @author icoolh
      */
     T getByPK(PK pk);
 
     /**
-     * 根据条件获取数据
+     * 根据条件获取单条数据
      * @param queryFilter
      * @return
+     * @author icoolh
      */
     T getByCondition(QueryFilter queryFilter);
 
@@ -52,6 +57,7 @@ public interface BaseService<T extends BaseEntity, PK extends Serializable> {
      * 获取数据
      * @param queryFilter
      * @return
+     * @author icoolh
      */
     List<T> listByCondition(QueryFilter queryFilter);
 
@@ -59,6 +65,7 @@ public interface BaseService<T extends BaseEntity, PK extends Serializable> {
      * 根据条件统计数据
      * @param queryFilter
      * @return
+     * @author icoolh
      */
     int countByCondition(QueryFilter queryFilter);
 
@@ -67,28 +74,15 @@ public interface BaseService<T extends BaseEntity, PK extends Serializable> {
      * 保存不为空的字段
      * @param t
      * @return
+     * @author icoolh
      */
     int saveSelect(T t);
 
     /**
-     * 保存记录 并返回自增id
-     * @param t
-     * @return
-     */
-    int saveReturnPK(T t);
-
-    /**
-     * 批量保存
-     * @param t
-     * @return
-     */
-    int saveList(List<T>  t);
-
-    /**
      * 利用分页插件获取分页数据
-     * 针对mysql
      * @param queryFilter
      * @return
+     * @author icoolh
      */
     PageBean<T> listPageBeanByCondition(QueryFilter queryFilter);
 

@@ -15,7 +15,7 @@ eureka:
     fetch-registry: true #是否从Eureka中获取注册信息
     service-url:
       #defaultZone: http://admin:1qazxsw2@192.168.1.120:6868/eureka/,http://admin:1qazxsw2@192.168.1.120:6869/eureka/
-      defaultZone: http://admin:1qazxsw2@$127.0.0.1:10001/eureka/
+      defaultZone: http://admin:1qazxsw2@127.0.0.1:10001/eureka/
 
   instance:
     prefer-ip-address: true #将自己的ip地址注册到Eureka服务中

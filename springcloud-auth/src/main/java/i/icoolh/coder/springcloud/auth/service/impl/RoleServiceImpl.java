@@ -15,7 +15,7 @@ public class RoleServiceImpl extends MysqlBaseServiceImpl<RoleAuth, Long> {
     @Override
     @Resource(name = "roleMapper")
     protected void setMysqlBaseMapper(MysqlBaseMapper mysqlBaseMapper) {
-        this.mysqlBaseDao = mysqlBaseMapper;
+        this.mysqlBaseMapper = mysqlBaseMapper;
         this.setBaseMapper(mysqlBaseMapper);
     }
 

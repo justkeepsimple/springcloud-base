@@ -23,15 +23,15 @@ public class UserServiceImpl extends MysqlBaseServiceImpl<User, Long> implements
     @Override
     @Resource(name = "userMapper")
     protected void setMysqlBaseMapper(MysqlBaseMapper mysqlBaseMapper) {
-        this.mysqlBaseDao = mysqlBaseMapper;
+        this.mysqlBaseMapper = mysqlBaseMapper;
         this.setBaseMapper(mysqlBaseMapper);
     }
 
     @Override
-    public User login(String username, String password) {
+    public User  login(String username, String password) {
         User user = new User();
         user.setUserName(username);
-        User user1 = baseDao.selectOne(user);
+        User user1 = baseMapper.selectOne(user);
         if (user1 != null && PasswdUtil.verify(password, user1.getPasswd())) {
             JWT jwt = authFeign.getToken("Basic YXV0aC1zZXJ2aWNlOmljb29saA==", "password", username, password);
             if (jwt != null){

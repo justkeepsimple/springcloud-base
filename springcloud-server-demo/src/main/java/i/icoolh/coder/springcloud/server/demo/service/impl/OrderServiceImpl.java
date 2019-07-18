@@ -22,7 +22,7 @@ public class OrderServiceImpl extends MysqlBaseServiceImpl<Order, Integer> imple
     @Override
     @Resource(name = "orderMapper")
     protected void setMysqlBaseMapper(MysqlBaseMapper mysqlBaseMapper) {
-        this.mysqlBaseDao = mysqlBaseMapper;
+        this.mysqlBaseMapper = mysqlBaseMapper;
         this.setBaseMapper(mysqlBaseMapper);
     }
 

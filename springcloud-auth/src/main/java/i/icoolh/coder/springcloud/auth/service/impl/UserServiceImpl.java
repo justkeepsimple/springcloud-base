@@ -21,7 +21,7 @@ public class UserServiceImpl extends MysqlBaseServiceImpl<UserAuth, Long> implem
     @Override
     @Resource(name = "userMapper")
     protected void setMysqlBaseMapper(MysqlBaseMapper mysqlBaseMapper) {
-        this.mysqlBaseDao = mysqlBaseMapper;
+        this.mysqlBaseMapper = mysqlBaseMapper;
         this.setBaseMapper(mysqlBaseMapper);
 
     }

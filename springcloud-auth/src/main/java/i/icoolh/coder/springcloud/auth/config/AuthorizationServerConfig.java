@@ -71,7 +71,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         return jwtAccessTokenConverter;
     }*/
 
-    //使用JWT作为token
+    /**
+     * JWT存储token
+     * @return
+     */
     @Bean
     public TokenStore jwtTokenStore() {
         return new JwtTokenStore(icoolhJwtAccessTokenConverter());

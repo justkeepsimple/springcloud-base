@@ -1,7 +1,7 @@
 package i.icoolh.coder.springcloud.server.demo;
 
 import com.github.pagehelper.PageHelper;
-import i.icoolh.coder.springcloud.common.pager.MysqlPageHelper;
+import i.icoolh.coder.springcloud.common.pager.PageHelperFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -18,6 +18,6 @@ public class SpringcloufServerDemoApplication {
     //配置mybatis的分页插件pageHelper
     @Bean
     public PageHelper pageHelper(){
-        return MysqlPageHelper.getMysqlPageHelper();
+        return PageHelperFactory.getPageHelper();
     }
 }
