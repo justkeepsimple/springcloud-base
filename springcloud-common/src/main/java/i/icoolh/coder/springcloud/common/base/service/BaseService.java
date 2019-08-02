@@ -62,12 +62,19 @@ public interface BaseService<T extends BaseEntity, PK extends Serializable> {
     List<T> listByCondition(QueryFilter queryFilter);
 
     /**
+     * 查询全部数据
+     * @return
+     * @author icoolh
+     */
+    List<T> listAll();
+    /**
      * 根据条件统计数据
      * @param queryFilter
      * @return
      * @author icoolh
      */
     int countByCondition(QueryFilter queryFilter);
+
 
 
     /**

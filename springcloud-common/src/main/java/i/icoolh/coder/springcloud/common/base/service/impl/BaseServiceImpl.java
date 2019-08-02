@@ -61,6 +61,17 @@ public abstract class BaseServiceImpl<T extends BaseEntity, PK extends Serializa
         return baseMapper.selectByExample(queryFilter.getExample());
     }
 
+    /**
+     * 查询全部数据
+     *
+     * @return
+     * @author icoolh
+     */
+    @Override
+    public List<T> listAll() {
+        return baseMapper.selectAll();
+    }
+
     @Override
     public int countByCondition(QueryFilter queryFilter) {
         return baseMapper.selectCountByExample(queryFilter.getExample());
