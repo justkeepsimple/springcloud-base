@@ -3,6 +3,11 @@ spring:
     active: dev
   cloud:
     gateway:
+#      routes:
+#        - id: remoteaddr_route
+#          uri: http://example.org
+#          predicates:
+#            - RemoteAddr=127.0.0.1
       globalcors:
         corsConfigurations:
           '[/**]':
